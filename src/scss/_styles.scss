@@ -1,0 +1,19 @@
+* {
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.side-by-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

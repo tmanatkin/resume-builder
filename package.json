@@ -1,0 +1,23 @@
+{
+  "name": "resume-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "build": "node src/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "markdown-it": "^14.1.0",
+    "markdown-it-container": "^4.0.0",
+    "puppeteer": "^24.12.0"
+  },
+  "devDependencies": {
+    "sass": "^1.89.2",
+    "vite": "^6.3.5"
+  }
+}
