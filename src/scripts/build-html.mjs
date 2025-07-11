@@ -4,8 +4,7 @@ import * as sass from "sass";
 import handlebars from "handlebars";
 import markdownIt from "markdown-it";
 import container from "markdown-it-container";
-import { markdownPromise } from "./combine-md.mjs";
-import { removeMdHtmlComments } from "./remove-md-html-comments.js";
+import { combineMarkdown } from "./combine-md.mjs";
 
 // single build on start
 await build();
@@ -30,8 +29,11 @@ if (process.argv.includes("--auto")) {
 // main build function
 async function build() {
   const templateFile = fs.readFileSync("./src/template.hbs", "utf8");
-  const rawMarkdown = await markdownPromise();
-  const cleanMarkdown = removeMdHtmlComments(rawMarkdown);
+
+  // combine markdown files
+  await combineMarkdown();
+
+  const markdown = fs.readFileSync("./src/markdown/resume.md", "utf8");
 
   // create markdown-it instance
   const md = new markdownIt();
@@ -43,7 +45,7 @@ async function build() {
   });
 
   // render markdown to HTML
-  const body = md.render(cleanMarkdown);
+  const body = md.render(markdown);
 
   // write HTML to file using template
   const template = handlebars.compile(templateFile);
