@@ -33,7 +33,7 @@ async function build() {
   // combine markdown files
   await combineMarkdown();
 
-  const markdown = fs.readFileSync("./src/markdown/resume.md", "utf8");
+  const markdown = fs.readFileSync("./output/resume.md", "utf8");
 
   // create markdown-it instance
   const md = new markdownIt();

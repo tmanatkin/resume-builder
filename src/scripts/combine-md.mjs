@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const markdownDirectory = "./src/markdown/sections";
+const markdownDirectory = "./src/markdown/";
 const markdownFiles = ["header.md", "education.md", "experience.md", "skills.md"];
 
 function removeMdHtmlComments(markdown) {
@@ -8,8 +8,8 @@ function removeMdHtmlComments(markdown) {
 }
 
 export const combineMarkdown = async () => {
-  const files = await Promise.all(markdownFiles.map((file) => fs.promises.readFile(`${markdownDirectory}/${file}`, "utf8")));
+  const files = await Promise.all(markdownFiles.map((file) => fs.promises.readFile(`${markdownDirectory}${file}`, "utf8")));
   const rawMarkdown = files.join("\n");
   const cleanMarkdown = removeMdHtmlComments(rawMarkdown);
-  fs.writeFileSync("./src/markdown/resume.md", cleanMarkdown, "utf8");
+  fs.writeFileSync("./output/resume.md", cleanMarkdown, "utf8");
 };
