@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "build": "node src/index.mjs"
+    "build:html": "node ./src/scripts/build-html.mjs",
+    "build:html:auto": "node ./src/scripts/build-html.mjs --auto",
+    "build:pdf": "node ./src/scripts/build-pdf.mjs",
+    "build": "npm run build:html && node ./src/scripts/build-pdf.mjs"
   },
   "keywords": [],
   "author": "",
