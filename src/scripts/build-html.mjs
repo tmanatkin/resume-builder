@@ -4,6 +4,7 @@ import * as sass from "sass";
 import handlebars from "handlebars";
 import markdownIt from "markdown-it";
 import container from "markdown-it-container";
+import { markdownPromise } from "./combine-md.mjs";
 
 // single build on start
 await build();
@@ -27,8 +28,8 @@ if (process.argv.includes("--auto")) {
 
 // main build function
 async function build() {
-  const resumeFile = fs.readFileSync("./src/markdown/resume.md", "utf8");
   const templateFile = fs.readFileSync("./src/template.hbs", "utf8");
+  const markdown = await markdownPromise();
 
   // create markdown-it instance
   const md = new markdownIt();
@@ -40,7 +41,7 @@ async function build() {
   });
 
   // render markdown to HTML
-  const body = md.render(resumeFile);
+  const body = md.render(markdown);
 
   // write HTML to file using template
   const template = handlebars.compile(templateFile);
