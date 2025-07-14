@@ -11,7 +11,7 @@ console.log("HTML build complete.");
 
 // constant auto-build using watcher
 if (process.argv.includes("--auto")) {
-  const watcher = chokidar.watch("./src", {
+  const watcher = chokidar.watch(["./src", "./../resume-md/markdown"], {
     ignoreInitial: true,
     ignored: /src\/scripts/ // ignore all script files
   });

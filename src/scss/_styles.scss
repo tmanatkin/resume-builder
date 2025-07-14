@@ -38,12 +38,9 @@ h2 {
   }
 }
 
-p > strong {
+h3 {
+  font-size: 1rem;
   font-weight: 900;
-}
-
-p:has(strong) + p {
-  font-weight: 700;
 }
 
 a {
