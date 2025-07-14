@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const markdownDirectory = "./src/markdown/";
+const markdownDirectory = "./../resume-md/markdown/";
 const markdownFiles = ["header.md", "education.md", "experience.md", "skills.md"];
 
 function removeMdHtmlComments(markdown) {

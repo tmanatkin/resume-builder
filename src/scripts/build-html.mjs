@@ -3,7 +3,6 @@ import chokidar from "chokidar";
 import * as sass from "sass";
 import handlebars from "handlebars";
 import markdownIt from "markdown-it";
-import container from "markdown-it-container";
 import { combineMarkdown } from "./combine-md.mjs";
 
 // single build on start
