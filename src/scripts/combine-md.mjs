@@ -18,5 +18,5 @@ export const combineMarkdown = async () => {
   const rawMarkdown = files.join("\n");
   const removedCommentsMd = removeMdHtmlComments(rawMarkdown);
   const convertedBlocksMd = convertTitleDateBlocks(removedCommentsMd);
-  fs.writeFileSync("./output/resume.md", convertedBlocksMd, "utf8");
+  fs.writeFileSync("./build/resume.md", convertedBlocksMd, "utf8");
 };

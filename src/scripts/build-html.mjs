@@ -33,7 +33,7 @@ async function build() {
   // combine markdown files
   await combineMarkdown();
 
-  const markdown = fs.readFileSync("./output/resume.md", "utf8");
+  const markdown = fs.readFileSync("./build/resume.md", "utf8");
 
   // create markdown-it instance
   const md = new markdownIt({ html: true });
@@ -49,5 +49,5 @@ async function build() {
   // write HTML to file using template
   const template = handlebars.compile(templateFile);
   const html = template({ body, styles: styles.css });
-  await fs.promises.writeFile("./output/resume.html", html);
+  await fs.promises.writeFile("./build/resume.html", html);
 }
