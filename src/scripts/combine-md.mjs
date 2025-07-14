@@ -14,7 +14,7 @@ function convertSpaceBetweenBlock(markdown) {
     const renderedLeft = md.render(left.trim());
     const renderedRight = md.render(right.trim());
 
-    return `<div style="display: flex; flex-direction: row; justify-content: space-between; margin: 0.75rem 0 0 0;">${renderedLeft} ${renderedRight}</div>`;
+    return `<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: end;">${renderedLeft} ${renderedRight}</div>`;
   });
 }
 
