@@ -36,8 +36,7 @@ async function build() {
   const markdown = fs.readFileSync("./output/resume.md", "utf8");
 
   // create markdown-it instance
-  const md = new markdownIt();
-  md.use(container, "title-date-container"); // add title-date-container container
+  const md = new markdownIt({ html: true });
 
   // compile SCSS
   const styles = sass.compile("./src/scss/main.scss", {
