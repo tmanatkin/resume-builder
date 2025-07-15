@@ -3,7 +3,8 @@ import chokidar from "chokidar";
 import * as sass from "sass";
 import handlebars from "handlebars";
 import markdownIt from "markdown-it";
-import { combineMarkdown } from "./combine-md.mjs";
+import combineMarkdown from "./combine-md.mjs";
+import config from "./config-loader.mjs";
 
 // single build on start
 await build();
@@ -11,7 +12,7 @@ console.log("HTML build complete.");
 
 // constant auto-build using watcher
 if (process.argv.includes("--auto")) {
-  const watcher = chokidar.watch(["./src", "./../resume-md/markdown"], {
+  const watcher = chokidar.watch(["./src", config.markdownFilesDir], {
     ignoreInitial: true,
     ignored: /src\/scripts/ // ignore all script files
   });
@@ -32,7 +33,7 @@ async function build() {
   // combine markdown files
   await combineMarkdown();
 
-  const markdown = fs.readFileSync("./build/resume.md", "utf8");
+  const markdown = fs.readFileSync(`${config.buildDir}${config.buildFileName}.md`, "utf8");
 
   // create markdown-it instance
   const md = new markdownIt({ html: true });
@@ -48,5 +49,5 @@ async function build() {
   // write HTML to file using template
   const template = handlebars.compile(templateFile);
   const html = template({ body, styles: styles.css });
-  await fs.promises.writeFile("./build/resume.html", html);
+  await fs.promises.writeFile(`${config.buildDir}${config.buildFileName}.html`, html);
 }

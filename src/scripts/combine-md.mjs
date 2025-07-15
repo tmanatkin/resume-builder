@@ -1,8 +1,6 @@
 import fs from "fs";
 import markdownIt from "markdown-it";
-
-const markdownDirectory = "./../resume-md/markdown/";
-const markdownFiles = ["header.md", "education.md", "experience.md", "skills.md"];
+import config from "./config-loader.mjs";
 
 function removeMdHtmlComments(markdown) {
   return markdown.replace(/<!--[\s\S]*?-->/g, "");
@@ -18,10 +16,12 @@ function convertSpaceBetweenBlock(markdown) {
   });
 }
 
-export const combineMarkdown = async () => {
-  const files = await Promise.all(markdownFiles.map((file) => fs.promises.readFile(`${markdownDirectory}${file}`, "utf8")));
+const combineMarkdown = async () => {
+  const files = await Promise.all(config.markdownFilesInOrder.map((file) => fs.promises.readFile(`${config.markdownFilesDir}${file}`, "utf8")));
   const rawMarkdown = files.join("\n");
   const removedCommentsMd = removeMdHtmlComments(rawMarkdown);
   const convertedBlocksMd = convertSpaceBetweenBlock(removedCommentsMd);
-  fs.writeFileSync("./build/resume.md", convertedBlocksMd, "utf8");
+  fs.writeFileSync(`${config.buildDir}${config.buildFileName}.md`, convertedBlocksMd, "utf8");
 };
+
+export default combineMarkdown;

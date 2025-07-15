@@ -1,0 +1,11 @@
+# directory where input markdown files are stored
+markdownFilesDir: "./example/markdown/"
+
+# order that markdown sections will appear in resume
+markdownFilesInOrder: ["header.md", "education.md", "experience.md", "skills.md"]
+
+# directory where resume will be built
+buildDir: "./example/build/"
+
+# filename of resume
+buildFileName: "example_resume"
