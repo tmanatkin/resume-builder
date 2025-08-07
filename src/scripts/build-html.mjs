@@ -26,13 +26,23 @@ if (process.argv.includes("--auto")) {
   console.log("Watching for changes...");
 }
 
+// convert custom space between blocks to correct HTML
+function convertSpaceBetweenBlock(markdown) {
+  return markdown.replace(/^(.*?)>>> *(.*?) *$/gm, (_, left, right) => {
+    const md = new markdownIt({ html: true });
+    const renderedLeft = md.render(left.trim());
+    const renderedRight = md.render(right.trim());
+
+    return `<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: end;">${renderedLeft} ${renderedRight}</div>`;
+  });
+}
+
 // main build function
 async function build() {
   const templateFile = fs.readFileSync("./src/template.hbs", "utf8");
 
   // combine markdown files
   await combineMarkdown();
-
   const markdown = fs.readFileSync(`${config.buildDir}${config.buildFileName}.md`, "utf8");
 
   // create markdown-it instance
@@ -43,8 +53,11 @@ async function build() {
     style: "compressed"
   });
 
+  // convert space between blocks
+  const convertedMarkdown = convertSpaceBetweenBlock(markdown);
+
   // render markdown to HTML
-  const body = md.render(markdown);
+  const body = md.render(convertedMarkdown);
 
   // write HTML to file using template
   const template = handlebars.compile(templateFile);
