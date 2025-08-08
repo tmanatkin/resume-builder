@@ -3,7 +3,7 @@ import chokidar from "chokidar";
 import * as sass from "sass";
 import handlebars from "handlebars";
 import markdownIt from "markdown-it";
-import combineMarkdown from "./combine-md.mjs";
+import combineResumeMarkdown from "./combine-md.mjs";
 import config from "./config-loader.mjs";
 
 // single build on start
@@ -12,7 +12,7 @@ console.log("HTML build complete.");
 
 // constant auto-build using watcher
 if (process.argv.includes("--auto")) {
-  const watcher = chokidar.watch(["./src", config.markdownFilesDir], {
+  const watcher = chokidar.watch(["./src", config.resumeMarkdownDir], {
     ignoreInitial: true,
     ignored: /src\/scripts/ // ignore all script files
   });
@@ -41,9 +41,12 @@ function convertSpaceBetweenBlock(markdown) {
 async function build() {
   const templateFile = fs.readFileSync("./src/template.hbs", "utf8");
 
-  // combine markdown files
-  await combineMarkdown();
-  const markdown = fs.readFileSync(`${config.buildDir}${config.buildFileName}.md`, "utf8");
+  // combine resume markdown files
+  await combineResumeMarkdown();
+  const resumeMarkdown = fs.readFileSync(`${config.buildDir}${config.resumeFileName}.md`, "utf8");
+
+  // get cover letter markdown
+  const coverLetterMarkdown = fs.readFileSync(`${config.coverLetterMarkdown}`, "utf8");
 
   // create markdown-it instance
   const md = new markdownIt({ html: true });
@@ -54,13 +57,16 @@ async function build() {
   });
 
   // convert space between blocks
-  const convertedMarkdown = convertSpaceBetweenBlock(markdown);
+  const convertedResumeMarkdown = convertSpaceBetweenBlock(resumeMarkdown);
 
   // render markdown to HTML
-  const body = md.render(convertedMarkdown);
+  const resumeBody = md.render(convertedResumeMarkdown);
+  const coverLetterBody = md.render(coverLetterMarkdown);
 
   // write HTML to file using template
   const template = handlebars.compile(templateFile);
-  const html = template({ body, styles: styles.css });
-  await fs.promises.writeFile(`${config.buildDir}${config.buildFileName}.html`, html);
+  const resumeHTML = template({ body: resumeBody, styles: styles.css });
+  const coverLetterHTML = template({ body: coverLetterBody, styles: styles.css });
+  await fs.promises.writeFile(`${config.buildDir}${config.resumeFileName}.html`, resumeHTML);
+  await fs.promises.writeFile(`${config.buildDir}${config.coverLetterFileName}.html`, coverLetterHTML);
 }

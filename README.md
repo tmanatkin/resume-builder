@@ -118,32 +118,46 @@ This project is meant to be flexible and adjust to your needs, so customize this
 
 ### Customize Config File
 
-1. `markdownFilesDir` is where you want to store your markdown files:
+1. `resumeMarkdownDir` is where you want to store your resume markdown files:
 
    ```yaml
    # directory where input markdown files are stored
-   markdownFilesDir: "../resume-md/markdown/"
+   resumeMarkdownDir: "../resume-md/markdown/"
    ```
 
-2. `markdownFilesInOrder` are what specific sections you want to appear in your resume, as well as their order:
+2. `coverLetterMarkdown` is the markdown file for your cover letter:
 
    ```yaml
-   # order that markdown sections will appear in resume
-   markdownFilesInOrder: ["header.md", "education.md", "experience.md", "skills.md"]
+   # file of cover letter markdown
+   coverLetterMarkdown: "../resume-md/markdown/"
    ```
 
-3. `markdownFilesDir` is the directory where your resume will be built (combined markdown, HTML, PDF):
+3. `resumeMarkdownFilesInOrder` are what specific sections you want to appear in your resume, as well as their order:
 
    ```yaml
-   # directory where resume will be built
-   buildDir: "../resume-md/build/"
+   # order that resume markdown sections will appear in resume
+   resumeMarkdownFilesInOrder: ["header.md", "education.md", "experience.md", "skills.md"]
    ```
 
-4. `markdownFilesDir` will be the name of your resume files that are built (name.md, name.html, name.pdf):
+4. `resumeFileName` will be the name of your resume files that are built (name.md, name.html, name.pdf):
 
    ```yaml
    # filename of resume
-   buildFileName: "resume"
+   resumeFileName: "resume"
+   ```
+
+5. `coverLetterFileName` will be the name of your cover letter files that are built (name.html, name.pdf):
+
+   ```yaml
+   # filename of cover letter
+   coverLetterFileName: "example_cover_letter"
+   ```
+
+6. `buildDir` is the directory where your resume and cover letter will be built (combined markdown, HTML, PDF):
+
+   ```yaml
+   # directory where files will be built to
+   buildDir: "./example/build/"
    ```
 
 ### Create Your Own Markdown Files
