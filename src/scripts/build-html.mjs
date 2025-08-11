@@ -52,7 +52,13 @@ async function build() {
   const md = new markdownIt({ html: true });
 
   // compile SCSS
-  const styles = sass.compile("./src/scss/main.scss", {
+  const styles = sass.compile("./src/scss/styles.scss", {
+    style: "compressed"
+  });
+  const resumeStyles = sass.compile("./src/scss/resume.scss", {
+    style: "compressed"
+  });
+  const coverLetterStyles = sass.compile("./src/scss/cover-letter.scss", {
     style: "compressed"
   });
 
@@ -65,8 +71,8 @@ async function build() {
 
   // write HTML to file using template
   const template = handlebars.compile(templateFile);
-  const resumeHTML = template({ body: resumeBody, styles: styles.css });
-  const coverLetterHTML = template({ body: coverLetterBody, styles: styles.css });
+  const resumeHTML = template({ body: resumeBody, styles: styles.css, documentStyles: resumeStyles.css });
+  const coverLetterHTML = template({ body: coverLetterBody, styles: styles.css, documentStyles: coverLetterStyles.css });
   await fs.promises.writeFile(`${config.buildDir}${config.resumeFileName}.html`, resumeHTML);
   await fs.promises.writeFile(`${config.buildDir}${config.coverLetterFileName}.html`, coverLetterHTML);
 }

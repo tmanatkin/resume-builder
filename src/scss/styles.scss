@@ -1,0 +1,26 @@
+@use "./reset";
+@use "./fonts";
+@use "./variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  width: 8.5in;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+ul {
+  padding: 0 0 0 1rem;
+  list-style-type: square;
+
+  li {
+    &::marker {
+      font-weight: 900;
+      content: "- ";
+    }
+  }
+}

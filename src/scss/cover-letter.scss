@@ -1,0 +1,19 @@
+@use "./variables" as *;
+
+* {
+  line-height: 1.5;
+}
+
+body {
+  padding: 3rem 5rem;
+}
+
+html {
+  font-size: 12pt;
+}
+
+ul {
+  li {
+    margin: 0.5rem 0 0 0;
+  }
+}
