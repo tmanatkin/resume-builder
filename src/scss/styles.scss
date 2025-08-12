@@ -4,19 +4,25 @@
 
 * {
   box-sizing: border-box;
+  line-height: 1.3;
+}
+
+html {
+  font-size: 11pt;
 }
 
 body {
   font-family: "Lato", sans-serif;
   width: 8.5in;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0 auto; // centers content horizontally on page
+  padding: 0.35in 0.5in 0.5in 0.5in; // takes off slight padding on top for visual weight
 }
 
 ul {
+  // adds padding to the left of list item to account for custom marker
   padding: 0 0 0 1rem;
-  list-style-type: square;
 
+  // uses custom list item marker
   li {
     &::marker {
       font-weight: 900;
