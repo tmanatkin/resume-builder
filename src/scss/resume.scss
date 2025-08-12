@@ -1,5 +1,13 @@
 @use "./variables" as *;
 
+* {
+  line-height: 1.3;
+}
+
+body {
+  padding-top: 0.35in; // takes off slight padding on top for visual weight
+}
+
 // main title styles
 h1 {
   font-family: "Montserrat", sans-serif;
