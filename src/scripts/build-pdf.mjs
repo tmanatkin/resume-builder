@@ -11,13 +11,13 @@ const browser = await puppeteer.launch();
 // resume page
 const resumePage = await browser.newPage();
 await resumePage.setContent(resumeHTML, { waitUntil: "networkidle0" });
-await resumePage.pdf({ path: `${config.buildDir}${config.resumeFileName}.pdf`, format: "A4" });
+await resumePage.pdf({ path: `${config.pdfBuildDir}${config.resumeFileName}.pdf`, format: "A4" });
 await resumePage.close();
 
 // cover letter page
 const coverLetterPage = await browser.newPage();
 await coverLetterPage.setContent(coverLetterHTML, { waitUntil: "networkidle0" });
-await coverLetterPage.pdf({ path: `${config.buildDir}${config.coverLetterFileName}.pdf`, format: "A4" });
+await coverLetterPage.pdf({ path: `${config.pdfBuildDir}${config.coverLetterFileName}.pdf`, format: "A4" });
 
 await coverLetterPage.close();
 

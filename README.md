@@ -153,11 +153,18 @@ This project is meant to be flexible and adjust to your needs, so customize this
    coverLetterFileName: "example_cover_letter"
    ```
 
-6. `buildDir` is the directory where your resume and cover letter will be built (combined markdown, HTML, PDF):
+6. `buildDir` is the directory where your resume and cover letter markdown and HTML will be built:
 
    ```yaml
-   # directory where files will be built to
+   # directory where markdown and HTML files will be built to
    buildDir: "./example/build/"
+   ```
+
+7. `pdfBuildDir` is the directory where your resume and cover letter PDFs will be built:
+
+   ```yaml
+   # directory where PDF files will be built to
+   pdfBuildDir: "./example/build/"
    ```
 
 ### Create Your Own Markdown Files

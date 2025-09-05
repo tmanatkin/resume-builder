@@ -13,5 +13,8 @@ resumeFileName: "example_resume"
 # filename of cover letter
 coverLetterFileName: "example_cover_letter"
 
-# directory where files will be built to
+# directory where markdown and HTML files will be built to
 buildDir: "./example/build/"
+
+# directory where PDF files will be built to
+pdfBuildDir: "./example/build/"
