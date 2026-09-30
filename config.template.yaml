@@ -1,20 +1,20 @@
 # directory where resume input markdown files are stored
-resumeMarkdownDir: "./example/markdown/"
+resumeMarkdownDir: "../resume-md/markdown/"
 
 # file of cover letter markdown
-coverLetterMarkdown: "./example/cover-letter.md"
+coverLetterMarkdown: "../resume-md/markdown/cover-letter.md"
 
 # order that resume markdown sections will appear in resume
-resumeMarkdownFilesInOrder: ["header.md", "education.md", "skills.md", "experience.md"]
+resumeMarkdownFilesInOrder: ["header.md", "education.md", "skills.md", "experience.md", "other.md"]
 
 # filename of resume
-resumeFileName: "example_resume"
+resumeFileName: "First_Last_Resume"
 
 # filename of cover letter
-coverLetterFileName: "example_cover_letter"
+coverLetterFileName: "First_Last_Cover_Letter"
 
 # directory where markdown and HTML files will be built to
-buildDir: "./example/build/"
+buildDir: "../resume-md/build/"
 
 # directory where PDF files will be built to
-pdfBuildDir: "./example/build/"
+pdfBuildDir: "../"
