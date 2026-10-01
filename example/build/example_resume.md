@@ -4,18 +4,14 @@
 
 ## EDUCATION
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: end;"><h3>Master of Example Degree</h3>
- <p><strong>Jan 2000</strong></p>
-</div>
+### Master of Example Degree >>> **Jan 2000**
 
 Example University - Example College
 
 - GPA 0.0
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non leo dui. Nullam in tellus a libero fringilla cursus. Proin nisi orci, sodales vitae erat eu, semper sagittis nulla. Suspendisse vel dictum lorem, eu auctor lectus. Phasellus convallis
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: end;"><h3>Bachelor of Science, Example Degree</h3>
- <p><strong>Jan 2000</strong></p>
-</div>
+### Bachelor of Science, Example Degree >>> **Jan 2000**
 
 Example University - Example College
 
@@ -24,9 +20,7 @@ Example University - Example College
 
 ## EXPERIENCE
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: end;"><h3>Current Position</h3>
- <p><strong>Jan 2000 - Present</strong></p>
-</div>
+### Current Position >>> **Jan 2000 - Present**
 
 Example Company
 
@@ -34,9 +28,7 @@ Example Company
 - Suspendisse tempus malesuada dolor in sodales. Integer blandit diam in hendrerit pharetrab vestibulum sollicitudin dui
 - Duis convallis, orci eget faucibus suscipit, magna sem efficitur turpis, quis volutpat velit urna et nisl vitae leo sollicitudin
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: end;"><h3>Previous Position</h3>
- <p><strong>Jan 2000 - Jan 2000</strong></p>
-</div>
+### Previous Position >>> **Jan 2000 - Jan 2000**
 
 Example Company
 
@@ -44,9 +36,7 @@ Example Company
 - Id dapibus nulla laoreet. Suspendisse gravida elementum eros non posuere. Fusce dui odio, luctus tempus sem et, pretium
 - Viverra sem. Suspendisse vulputate metus nec commodo consequat. Ut volutpat, nisl quis accumsan placerat, mauris tortor
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: end;"><h3>Previous Position</h3>
- <p><strong>Jan 2000 - Jan 2000</strong></p>
-</div>
+### Previous Position >>> **Jan 2000 - Jan 2000**
 
 Example Company
 
@@ -54,9 +44,7 @@ Example Company
 - Pellentesque fermentum purus ante, id aliquam orci pulvinar vel. Pellentesque habitant morbi tristique senectus et netus et
 - Malesuada fames ac turpis egestas. Maecenas gravida sapien fringilla, pharetra velit ut, pharetra lacus. Fusce feugiat
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: end;"><h3>Previous Position</h3>
- <p><strong>Jan 2000 - Jan 2000</strong></p>
-</div>
+### Previous Position >>> **Jan 2000 - Jan 2000**
 
 Example Company
 
