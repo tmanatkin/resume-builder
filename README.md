@@ -7,6 +7,8 @@ Resume and cover letter builder that converts Markdown to PDF.
 ![Puppeteer](https://img.shields.io/badge/Puppeteer-222222?style=for-the-badge&logo=puppeteer)
 ![Sass](https://img.shields.io/badge/Sass-222222?style=for-the-badge&logo=sass)
 
+<img src=".github/preview.png" width="640" alt="Resume Builder">
+
 - Content stored as Markdown, built as styled HTML and a PDF
 - YAML config for section order, file names, and output folders
 - HTML auto-rebuild mode for live refreshes while editing
