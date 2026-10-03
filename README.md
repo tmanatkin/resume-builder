@@ -13,4 +13,4 @@ Resume and cover letter builder that converts Markdown to PDF.
 - YAML config for section order, file names, and output folders
 - HTML auto-rebuild mode for live refreshes while editing
 - Custom `>>>` syntax for right-aligning text on the same line
-- Example [Markdown](example/markdown) and [PDF](example/build/example_resume.pdf)
+- Example [Markdown](example/build/example_resume.md?plain=1) and [PDF](example/build/example_resume.pdf)
