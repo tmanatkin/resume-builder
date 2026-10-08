@@ -5,7 +5,7 @@ Resume and cover letter builder that converts Markdown to PDF.
 ![Node.js](https://img.shields.io/badge/Node.js-222222?style=for-the-badge&logo=nodedotjs)
 ![Markdown](https://img.shields.io/badge/Markdown-222222?style=for-the-badge&logo=markdown)
 ![Puppeteer](https://img.shields.io/badge/Puppeteer-222222?style=for-the-badge&logo=puppeteer)
-![Sass](https://img.shields.io/badge/Sass-222222?style=for-the-badge&logo=sass)
+![SCSS](https://img.shields.io/badge/SCSS-222222?style=for-the-badge&logo=sass)
 
 <img src=".github/preview.png" width="640" alt="Resume Builder">
 
