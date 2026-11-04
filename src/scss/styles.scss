@@ -12,6 +12,8 @@ html {
 
 body {
   font-family: "Lato", sans-serif;
+  font-variant-ligatures: none; // keeps letters like "fi" as separate characters for text extraction
+  font-kerning: none; // prevents PDF parsers from splitting words at tight letter pairs
   width: 8.5in;
   margin: 0 auto;
   padding: 0.5in;
