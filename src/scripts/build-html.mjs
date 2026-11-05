@@ -71,8 +71,14 @@ async function build() {
 
   // write HTML to file using template
   const template = handlebars.compile(templateFile);
-  const resumeHTML = template({ body: resumeBody, styles: styles.css, documentStyles: resumeStyles.css });
+  const resumeHTML = template({
+    title: config.resumeFileName.replaceAll("_", " "), // used as the PDF title
+    body: resumeBody,
+    styles: styles.css,
+    documentStyles: resumeStyles.css,
+  });
   const coverLetterHTML = template({
+    title: config.coverLetterFileName.replaceAll("_", " "), // used as the PDF title
     body: coverLetterBody,
     styles: styles.css,
     documentStyles: coverLetterStyles.css,
