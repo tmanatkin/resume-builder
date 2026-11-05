@@ -16,8 +16,7 @@ body {
   font-kerning: none; // prevents PDF parsers from splitting words at tight letter pairs
   width: 8.5in;
   margin: 0 auto;
-  padding: 0.75in;
-  padding-top: 0.5in; // takes off slight padding on top for visual weight
+  padding: 0.45in 0.75in; // takes slight amount of padding on top for visual weight, bottom matches
 }
 
 ul {

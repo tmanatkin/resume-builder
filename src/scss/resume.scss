@@ -8,12 +8,7 @@
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 18pt;
-  text-align: center;
-
-  & + p {
-    text-align: center; // centers contact line
-    margin: 0 0 5pt 0; // adds space before/after contact line
-  }
+  margin: 0 0 5pt 0;
 }
 
 // section title styles
