@@ -4,11 +4,23 @@
   line-height: 1.3;
 }
 
+div:has(> h1) {
+  align-items: center !important; // use important so it overrides inline styles
+  margin-bottom: 5pt; // margin below h1 has to be here since it is wrapped in a div for the >>> styling
+}
+
 // main title styles
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 18pt;
-  margin: 0 0 5pt 0;
+  margin: 0;
+}
+
+// paragraph >>> text after h1
+h1 + p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
 }
 
 // section title styles
