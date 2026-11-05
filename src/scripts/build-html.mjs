@@ -14,7 +14,7 @@ console.log("HTML build complete.");
 if (process.argv.includes("--auto")) {
   const watcher = chokidar.watch(["./src", config.resumeMarkdownDir], {
     ignoreInitial: true,
-    ignored: /src\/scripts/ // ignore all script files
+    ignored: /src\/scripts/, // ignore all script files
   });
 
   watcher.on("change", async () => {
