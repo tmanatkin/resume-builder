@@ -1,19 +1,8 @@
 @use "./variables" as *;
 
-* {
-  line-height: 1.3;
-}
-
 div:has(> h1) {
   align-items: center !important; // use important so it overrides inline styles
   margin-bottom: 5pt; // margin below h1 has to be here since it is wrapped in a div for the >>> styling
-}
-
-// main title styles
-h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 18pt;
-  margin: 0;
 }
 
 // paragraph >>> text after h1
@@ -36,11 +25,6 @@ h2 {
 h3 {
   font-size: inherit;
   font-weight: 900;
-}
-
-// changes link to always be text color
-a {
-  color: $color-foreground;
 }
 
 // adds space between sub-sections inside of each section

@@ -4,6 +4,7 @@
 
 * {
   box-sizing: border-box;
+  line-height: 1.3;
 }
 
 html {
@@ -17,6 +18,16 @@ body {
   width: 8.5in;
   margin: 0 auto;
   padding: 0.45in 0.75in; // takes slight amount of padding on top for visual weight, bottom matches
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18pt;
+  margin: 0;
+}
+
+a {
+  color: $color-foreground;
 }
 
 ul {
