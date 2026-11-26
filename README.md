@@ -1,6 +1,8 @@
 # Resume Builder
 
-Resume and cover letter builder that converts Markdown to PDF.
+Markdown to PDF for resumes and cover letters.
+
+<samp>&gt;</samp> Built to create and maintain my own resume.
 
 ![Node.js](https://img.shields.io/badge/Node.js-222222?style=for-the-badge&logo=nodedotjs)
 ![Markdown](https://img.shields.io/badge/Markdown-222222?style=for-the-badge&logo=markdown)
