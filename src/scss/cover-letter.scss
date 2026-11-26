@@ -1,12 +1,12 @@
 @use "./variables" as *;
 
-* {
-  line-height: 1.5;
+h1 {
+  margin-bottom: 5pt;
 }
 
 // adds slight spacing to list elements
 ul {
   li {
-    margin: 0.5rem 0 0 0;
+    margin: 5pt 0 0 0;
   }
 }

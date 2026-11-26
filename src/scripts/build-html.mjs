@@ -14,7 +14,7 @@ console.log("HTML build complete.");
 if (process.argv.includes("--auto")) {
   const watcher = chokidar.watch(["./src", config.resumeMarkdownDir], {
     ignoreInitial: true,
-    ignored: /src\/scripts/ // ignore all script files
+    ignored: /src\/scripts/, // ignore all script files
   });
 
   watcher.on("change", async () => {
@@ -33,7 +33,7 @@ function convertSpaceBetweenBlock(markdown) {
     const renderedLeft = md.render(left.trim());
     const renderedRight = md.render(right.trim());
 
-    return `<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: end;">${renderedLeft} ${renderedRight}</div>`;
+    return `<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline;">${renderedLeft} ${renderedRight}</div>`;
   });
 }
 
@@ -53,13 +53,13 @@ async function build() {
 
   // compile SCSS
   const styles = sass.compile("./src/scss/styles.scss", {
-    style: "compressed"
+    style: "compressed",
   });
   const resumeStyles = sass.compile("./src/scss/resume.scss", {
-    style: "compressed"
+    style: "compressed",
   });
   const coverLetterStyles = sass.compile("./src/scss/cover-letter.scss", {
-    style: "compressed"
+    style: "compressed",
   });
 
   // convert space between blocks
@@ -71,8 +71,18 @@ async function build() {
 
   // write HTML to file using template
   const template = handlebars.compile(templateFile);
-  const resumeHTML = template({ body: resumeBody, styles: styles.css, documentStyles: resumeStyles.css });
-  const coverLetterHTML = template({ body: coverLetterBody, styles: styles.css, documentStyles: coverLetterStyles.css });
+  const resumeHTML = template({
+    title: config.resumeFileName.replaceAll("_", " "), // used as the PDF title
+    body: resumeBody,
+    styles: styles.css,
+    documentStyles: resumeStyles.css,
+  });
+  const coverLetterHTML = template({
+    title: config.coverLetterFileName.replaceAll("_", " "), // used as the PDF title
+    body: coverLetterBody,
+    styles: styles.css,
+    documentStyles: coverLetterStyles.css,
+  });
   await fs.promises.writeFile(`${config.buildDir}${config.resumeFileName}.html`, resumeHTML);
   await fs.promises.writeFile(`${config.buildDir}${config.coverLetterFileName}.html`, coverLetterHTML);
 }

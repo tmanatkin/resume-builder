@@ -4,22 +4,35 @@
 
 * {
   box-sizing: border-box;
+  line-height: 1.3;
 }
 
 html {
-  font-size: 11pt;
+  font-size: 10pt;
 }
 
 body {
   font-family: "Lato", sans-serif;
+  font-variant-ligatures: none; // keeps letters like "fi" as separate characters for text extraction
+  font-kerning: none; // prevents PDF parsers from splitting words at tight letter pairs
   width: 8.5in;
   margin: 0 auto;
-  padding: 0.5in;
+  padding: 0.45in 0.75in; // takes slight amount of padding on top for visual weight, bottom matches
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18pt;
+  margin: 0;
+}
+
+a {
+  color: $color-foreground;
 }
 
 ul {
   // adds padding to the left of list item to account for custom marker
-  padding: 0 0 0 1rem;
+  padding: 0 0 0 1em;
 
   // uses custom list item marker
   li {
